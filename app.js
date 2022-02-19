@@ -1,3 +1,7 @@
+/*ENGLISH AND SPANISH COMMENTS - COMENTARIOS EN INGLES Y ESPAÑOL*/
+
+/*Array with all reviews (shall be on backend server) - 
+Vector con todas las reseñas (Debería estar en un server backend)*/
 let reviews = [
     {
         id: 1,
@@ -36,7 +40,7 @@ let reviews = [
     }
 ]
 
-
+/*Constants assignation - Asignación de constantes*/
 const named = document.getElementById("name");
 const occupation = document.getElementById("occupation");
 const image = document.getElementById("image");
@@ -46,6 +50,8 @@ const next = document.querySelector(".nextButton");
 const number = document.getElementById("number");
 let currentItem = 0;
 
+
+/*Load content for the first time - Cargar contenido por primera vez*/
 window.addEventListener("DOMContentLoaded", function () {
     const item = reviews[currentItem];
     image.src = item.img;
@@ -55,6 +61,8 @@ window.addEventListener("DOMContentLoaded", function () {
     number.textContent = (currentItem + 1)  + " of " + (reviews.length);
   });
 
+
+/*Previus button function - Función botón previo*/  
 prev.addEventListener("click", function() {
     if (currentItem >= 1) {
         currentItem = currentItem - 1;
@@ -65,6 +73,8 @@ prev.addEventListener("click", function() {
     showPerson();
 })
 
+
+/*Next button function - Función botón siguiente*/
 next.addEventListener("click", function() {
     if (currentItem < reviews.length) {
         currentItem += 1;
@@ -75,6 +85,8 @@ next.addEventListener("click", function() {
     showPerson();
 })
 
+
+/*To load content depending of index function - Función para cargar contenido dependiendo del índice*/
 function showPerson() {
     const item = reviews[currentItem];
     image.src = item.img;
